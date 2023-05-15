@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRE</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: rgb(0, 80, 0);
+        }
+
+        h1, p {
+            color: white;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        #linha {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ministério das relações exteriores (MRE)</h1>
+    <p id="linha" >Meu país é: </p>
+    <input type="text" name="pais" id="pais">
+    <input type="submit" value="Enviar" onclick="enviar()">
+    <div id="resultado"></div>
+    <script>
+        function enviar() {
+            var pais = document.getElementById('pais').value;
+            var resultado = document.getElementById('resultado');
+            resultado.innerHTML = `<p>Vivendo em ${pais}</p>`;
+            if (pais == 'Brasil') {
+                resultado.innerHTML += `<p>Você é Brasileiro!</p>`;
+            } else {
+               resultado.innerHTML += `<p>Você é estrangeiro!</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
